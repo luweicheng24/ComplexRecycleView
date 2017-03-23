@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
 
-        adapter = new MyAdapter(this, oneList, twoeList);oneList = new ArrayList<>();
+        oneList = new ArrayList<>();
         twoeList = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             oneList.add(new OneTypeBean("中华美食", images_1[i % 6], "独特的西北特色"));
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 return 0;
             }
         });
+        adapter = new MyAdapter(this, oneList, twoeList);
         mRecycleView.setLayoutManager(gm);
         mRecycleView.setAdapter(adapter);
     }
